@@ -1,8 +1,6 @@
-*{ margin: 0px;padding: 0px;}
+ *{ margin: 0px;padding: 0px;}
+ /* 方式一 flow+margin */
 .parent{
-	/*width:70%;
-	height: 80%;
-	margin:20px auto;*/
 	min-width: 640px;
 	padding: 20px;
 	background-color: #eee;
@@ -11,19 +9,15 @@
 
 .left{
 	float:left;
-	margin-right: -100%;  /*不是很理解？*/
+	margin-right: -100%;  
 	position: relative;
-	width: 200px;
+	width: 160px;
+	padding: 20px;
 	background-color:white;
 	}
 .left img{
-	display: block;
-	margin: 20px;
-}
-.left p{
-    position: absolute;  /* 相对容器的位置 */
-    left: 120px;
-    top:20px;
+	float: left;
+	margin-right: 20px;
 }
 
 .center{
@@ -33,7 +27,7 @@
 	background-color:white;
 	}
 .center p{
-	text-indent: 2em; /* 首行缩进 */
+	text-indent: 2em; /*首行缩进*/
 }
 
 .right{
@@ -50,14 +44,63 @@
 .right img{
 	width: 80px;
 	height: 80px;
-	display: block; /* 去除li的3px间距 */
+	display: block; /*去除li的3px间距*/
 }
 
-/* 清除浮动 */
-.floatfix:after{
+.floatfix:after{    /*清除浮动*/
 	content: "";
 	clear:both;
 	display: block;
 	height: 0;
 	overflow: hidden;
 }
+
+
+
+/* 方式二 position 
+/* .parent{
+	min-width: 640px;
+	height: 420px;
+	padding: 20px;
+	background-color: #eee;
+	border: 1px solid #999;
+	position: relative;
+}
+
+.left{
+	width: 160px;
+	padding: 20px;
+	background-color:white;
+	overflow: hidden;
+	}
+.left img{
+	float: left;
+	margin-right: 20px;
+}
+
+.center{
+	padding: 20px;
+	background-color:white;
+	position: absolute;
+	top:20px;
+	left: 240px;
+	right:160px;
+}
+
+.right{
+	width: 80px;
+	padding: 20px 20px 0px 20px;
+	background-color:white;
+	position: absolute;
+	top:20px;
+	right: 20px;
+}
+.right li{
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+.right img{
+	width: 80px;
+	height: 80px;
+	display: block; 
+}*/
